@@ -7,6 +7,30 @@
 // get the result element
 let result  = document.getElementById("result");
 
+//función para convertir valor ingresado
+function convertir(operacion) {
+    //alert(result.value);
+    let val = result.value;
+    let res = 0;
+    if (operacion == "C_a_F") {
+        // (0°C × 9/5) + 32 = 32°F
+        let res = (val*9/5) + 32;
+        result.value = res;
+    } else if (operacion == "Pas_a_Bar") {
+        // val / 100000
+        let res = val/100000;
+        result.value = res;
+    } else if (operacion == "Kg_a_Gr") {
+        // val * 1000
+        let res = val*1000;
+        result.value = res;
+    } else if (operacion == "Mts_a_Cm") {
+        // val * 100
+        let res = val*100;
+        result.value = res;
+    }
+}
+
 // Input numbers by key pressed
 function input(num){
     let number = result.value;
@@ -19,7 +43,7 @@ function calc(){
         let result2  = result.value;
         result.value = eval(result2)
     } else{
-        alert("Erro! Adicione valores válidos.")
+        alert("Error! Adicione valores válidos.")
     }
 }
 
